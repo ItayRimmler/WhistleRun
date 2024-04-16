@@ -3,3 +3,5 @@
 SR = 44100
 CH = 2
 DUR = 1/30
+FR = 1024
+RECTIME = 1
