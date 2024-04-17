@@ -2,6 +2,14 @@
 from src.lib.all import g
 from src.lib.all import constants as c
 
+def multi_record(audio):
+    data = g.np.array([])
+    for i in range(5):
+        st, data_fraction = start_recording(audio)
+        data = g.np.concatenate([data, g.np.frombuffer(b"".join(data_fraction), dtype=g.np.int16)])
+    stop_recording(st)
+    return data
+
 # USING PYAUDIO:
 # Beginning of the program: audio = pa.PyAudio() #In the script you want to use...
 # stream, data = start_recording(audio)
