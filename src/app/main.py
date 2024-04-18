@@ -2,7 +2,7 @@
 from src.lib.all import g
 from src.lib.all import constants as c
 from src.lib.audio.record import *
-from src.lib.audio.save_data import save_data
+from src.lib.audio.bin import save_data, print_data
 
 audio = g.pa.PyAudio()
 data = g.np.array([])
@@ -12,4 +12,6 @@ for i in range(8):
 audio.terminate()
 
 save_data(data)
+
+print_data(data.shape[0])
 
