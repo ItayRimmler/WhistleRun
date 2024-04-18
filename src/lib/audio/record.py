@@ -2,6 +2,7 @@
 from src.lib.all import g
 from src.lib.all import constants as c
 
+# IF YOU'RE USING STFT THEN DELETE THE FOLLOWING FUNCTION:
 def multi_record(audio):
     data = g.np.array([])
     for i in range(5):
@@ -19,6 +20,8 @@ def multi_record(audio):
 # ...~pause and continue how many times you want, it will preserve the data while paused~...
 # stop_recording(stream)
 # End of the program: audio.terminate() #In the script you want to use...
+
+# BASIC RECORDING FUNCTIONS:
 
 def start_recording(audio):
     st = audio.open(
