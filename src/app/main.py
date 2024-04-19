@@ -2,7 +2,7 @@
 from src.lib.all import g
 from src.lib.all import constants as c
 from src.lib.audio.record import *
-from src.lib.audio.bin import save_data, print_data
+from src.lib.audio.bin import save_data, process_in_cpp, read_data
 
 audio = g.pa.PyAudio()
 data = g.np.array([])
@@ -13,5 +13,7 @@ audio.terminate()
 
 save_data(data)
 
-print_data(data.shape[0])
+process_in_cpp(data.shape[0])
+
+data = read_data()
 
